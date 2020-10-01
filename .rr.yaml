@@ -1,0 +1,14 @@
+http:
+  address: 0.0.0.0:8080
+  workers:
+    command: "php psr-worker.php"
+    # relay: "tcp://localhost:7000"
+    relay:   "unix://rr.sock"
+    # relay: "tcp://localhost:7000"
+    pool:
+      numWorkers: 4
+      destroyTimeout: 3
+      maxJobs:  0
+rpc:
+  enable: true
+  listen: tcp://:6001
